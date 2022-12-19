@@ -18,7 +18,12 @@ The `source_diagrams` directory also contains a `rotation_data.csv` file with me
 For segmentation training, I have extracted polygons from the JSON file and made the segmentation sub-dataset readily available, so no JSON parsing is required. Please keep in mind that the images have NOT been unrotated.
 
 ### The classification dataset (the `classification_data` directory)
-For classification, the classification data is also provided, with each square extracted from the corresponding image, aligned and resized to am 64x64 RGB image. Please bear in mind, that classes are imbalanced, as empty tiles correspond to most of the samples. Each image's label is given by it's name, which is of the following format: `<image_id>_class_<class index>.png`. This directory also contains a `class_map.json` file, which maps the class name to class id (eg. `"White pawn", "2"`).
+| 0_class_0.png | 1000_class_5.png | 1004_class_11.png | 1054_class_1.png | 
+| ---- | ---- | ---- |   ---- |  
+| ![0_class_0.png](classification_data/0_class_0.png) | ![1000_class_5.png](classification_data/1000_class_5.png) | ![1004_class_11.png](classification_data/1004_class_11.png) |  ![1054_class_1.png](classification_data/1054_class_1.png) | 
+
+  
+For classification, the classification data is also provided, with each square extracted from the corresponding image, aligned and resized to am 64x64 RGB image. Please bear in mind, that classes are imbalanced, as empty tiles correspond to most of the samples. Each image's label is given by it's name, which is of the following format: `<image_id>_class_<class index>.png`. This directory also contains a `class_map.json` file, which maps the class name to class id (eg. `"White pawn": "2"`).
 
 
 ## Pretrained models and model training examples
