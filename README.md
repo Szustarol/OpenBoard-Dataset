@@ -3,11 +3,17 @@ OpenBoard Dataset is a dataset of chess diagram photos with labels for the board
 The dataset is separated into two parts, as usually is the task of detecting chess positions from photos.
 I also provide saved Tensorflow models trained with this dataset, along with software that can run them in [the OpenBoard repository](https://github.com/Szustarol).
 
-### The raw version of the dataset (the `source_diagrams` directory)
+### The raw version of the dataset (the `source_diagrams` directory)  
+
 The dataset was gathered manually, by taking photos of chess positions as seen on an LCD display, from twitch streams, lichess.org and chess.com websites, with various board visual settings.
 To improve labeling speed, each photo is labeled the following way:
 1. A polygon surrounding the board area is created. In theory the polygon can consist of any number of vertices, however in this case I have provided, that every polygon is a quadrilateral. 
 2. Each figure present on the board is assigned a keypoint, that is a point that lies inside the square on which the figure is located. 
+
+Example of data generated from `source_diagrams` paired with `labels.json` is shown below, all keypoints have been marked as coloured dots.  
+![Source data](chess_diagrams.png)  
+
+
 
 All of the data has been labeled in label studio, but to give it a more readable format, I have converted it to a more accessible `labels.json`, which contain all the information required to do classification.
 Except for the figure keypoints, each photo for which it applies, contains keypoints for the A0 square, and the H8 square, so board orientation can be detected.
@@ -15,7 +21,8 @@ Except for the figure keypoints, each photo for which it applies, contains keypo
 The `source_diagrams` directory also contains a `rotation_data.csv` file with metadata concerning image rotation.
 
 ### The segmentation dataset (the `segmentation_data` directory)
-![Segmentation example](segmentation_example.png)
+![Segmentation example](segmentation_example.png)  
+
 For segmentation training, I have extracted polygons from the JSON file and made the segmentation sub-dataset readily available, so no JSON parsing is required. Please keep in mind that the images have NOT been unrotated.
 
 ### The classification dataset (the `classification_data` directory)
