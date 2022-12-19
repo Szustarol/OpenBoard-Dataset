@@ -15,6 +15,7 @@ Except for the figure keypoints, each photo for which it applies, contains keypo
 The `source_diagrams` directory also contains a `rotation_data.csv` file with metadata concerning image rotation.
 
 ### The segmentation dataset (the `segmentation_data` directory)
+![Segmentation example](segmentation_example.png)
 For segmentation training, I have extracted polygons from the JSON file and made the segmentation sub-dataset readily available, so no JSON parsing is required. Please keep in mind that the images have NOT been unrotated.
 
 ### The classification dataset (the `classification_data` directory)
